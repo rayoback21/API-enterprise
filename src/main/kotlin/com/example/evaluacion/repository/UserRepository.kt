@@ -1,11 +1,11 @@
-
 package com.example.evaluacion.repository
 
-import com.example.evaluacion.entity.Merchant
+
+import com.example.entity.model.User
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface MerchantRepository: JpaRepository<Merchant, Long> {
-    fun findById(merchantId: Long?): Merchant?
+interface UserRepository : JpaRepository<User, Long> {
+    fun findById(id: Long?): User?
 }

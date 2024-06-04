@@ -1,21 +1,26 @@
-package com.example.evaluacion.entity
+package com.example.entity.model
+
+import com.example.evaluacion.entity.Country
 import jakarta.persistence.*
 import java.util.*
 
 @Entity
-@Table(name = "products")
-
+@Table(name = "users")
 class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = false)
     var id: Long? = null
-    var description: String? = null
-    var price: Double? = null
-    var status: String? = null
+    @Column(name = "fullname")
+    var fullName: String? = null
+    var email: String? = null
+    var gender: String? = null
+    @Column(name = "birth_date")
+    var birthDate: String? = null
     @Column(name = "created_at")
     var createdAt: Date? = null
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "merchant_id")
-    var merchant:Merchant? = null
+    @JoinColumn(name = "country_id")
+    var country: Country? = null
 }
+
+
